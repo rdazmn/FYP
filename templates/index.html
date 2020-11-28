@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Anomaly Classifying</title>
+  </head>
+
+<body>
+ <div class="login">
+	<h1>Monthly Anomaly</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict_expenses')}}"method="post">
+    	<input type="text" name="PRBUsageUL" placeholder="PRBusageUL" required="required" />
+        <input type="text" name="PRBUsageDL" placeholder="PRBUsageDL" required="required" />
+        <input type="text" name="mean threshold of UL" placeholder="meanThr_DL" required="required" />
+        <input type="text" name="mean threshold of DL" placeholder="meanThr_UL" required="required" />
+        <input type="text" name="maximum threshold of DL" placeholder="maxThr_DL" required="required" />
+        <input type="text" name="maximum threshold of UL" placeholder="maxThr_UL" required="required" />
+        <input type="text" name="mean of User Equipment during DL" placeholder="meanUE_DL" required="required" />
+        <input type="text" name="mean of User Equipment during UL" placeholder="meanUE_UL" required="required" />
+        <input type="text" name="maximum of User Equipment during DL" placeholder="maxUE_DL" required="required" />
+        <input type="text" name="maximum of User Equipment during UL" placeholder="maxUE_UL" required="required" />
+        <input type="text" name="total of User Equipment during DL & UL" placeholder="maxUE_UL_DL" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict unusual class</button>
+    </form>
+
+   <br>
+   <br>
+   {{ classifying_text }}
+
+ </div>
